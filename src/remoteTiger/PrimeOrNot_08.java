@@ -1,28 +1,22 @@
 package remoteTiger;
 import java.util.Scanner;
 
+
 public class PrimeOrNot_08 {
 
 	public static void main(String[] args) {
-	       Scanner s = new Scanner(System.in);
+		   int num, i, count=0;
+		   Scanner s = new Scanner(System.in);
 	       System.out.print("Enter a number : ");
-	       int n = s.nextInt();
-	       if (isPrime(n)) {
-	           System.out.println(n + " is a prime number");
-	       } else {
-	           System.out.println(n + " is not a prime number");
-	       }
-	   }
-
-	   public static boolean isPrime(int n) {
-	       if (n <= 1) {
-	           return false;
-	       }
-	       for (int i = 2; i < Math.sqrt(n); i++) {
-	           if (n % i == 0) {
-	               return false;
-	           }
-	       }
-	       return true;
-	   }
+	       num= s.nextInt();
+	       for(i=10; i<num; i++) {
+	            if(num%i == 0){
+	                count++;
+	                break;}
+	        }
+	        if(count == 0){
+	            System.out.print("This is a Prime Number");}
+	        else{
+	            System.out.print("This is not a Prime Number");}
+	    }
 	}
