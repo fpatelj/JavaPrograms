@@ -14,6 +14,14 @@ public class OddOrEven_03 {
 		{
 			System.out.println("Its odd");
 		}
+		
+		
+		//System.out.println("Is the number is even = " + isEven(a));
 	}
+	
+	/*public static boolean isEven(int number){
+		
+		return number%2==0;
+	}*/
 
 }
