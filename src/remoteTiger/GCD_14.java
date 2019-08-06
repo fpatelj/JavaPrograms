@@ -1,20 +1,30 @@
 package remoteTiger;
 
+import java.util.Scanner;
+
 public class GCD_14 
 {
 
 	public static void main(String[] args) 
 	{
-		int num1 = 9, num2 = 18, gcd = 1;
-        for(int i = 1; i <= num1 && i <= num2; ++i)
-        {
-           
-            if(num1 % i==0 && num2 % i==0)
-                gcd = i;
+		Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter first number:");
+        int number1 = scanner.nextInt();
+        System.out.println("Please enter second number:");
+        int number2 = scanner.nextInt();
+      
+        System.out.println("GCD of two numbers " + number1 +" and " 
+                           + number2 +" is :" + findGCD(number1,number2));
+      
+      
+    }
+	private static int findGCD(int number1, int number2)
+	{
+		if(number2 == 0){
+            return number1;
         }
-        
-    System.out.printf("The G.C.D of the number's %d and %d is %d", num1, num2, gcd);
+        return findGCD(number2, number1%number2);
+	}
     
 	}
 
-}

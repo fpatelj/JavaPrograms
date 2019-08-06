@@ -1,22 +1,45 @@
 package remoteTiger;
+import java.util.Scanner;
+
 
 public class LCM_15 
 {
 
-	public static void main(String[] args)
-	{
-		int num1 = 12, num2 = 6, lcm;
-       
-        lcm = (num1 > num2) ? num1 : num2;
-        
-        while(true)
+	public static int lcm(int num1, int num2) {
+        int x,max=0,min=0,lcm=0;
+        if(num1>num2)
         {
-            if( lcm % num1 == 0 && lcm % num2 == 0 )
-            {
-                System.out.printf("The LCM of %d and %d is %d.", num1, num2, lcm);
-                break;
-            }
-            ++lcm;
+            max=num1;
+            min=num2;
         }
-	}
+        else
+        {
+            max=num2;
+            min=num1;
+        }
+          
+     
+        for(int i=1;i<=min;i++)
+        {
+         x=max*i; 
+         if(x%min==0) 
+          {
+           lcm=x; 
+           break; 
+          }
+         }
+      return lcm;
+ }
+	public static void main(String[] args) {
+	      
+        Scanner sc=new Scanner(System.in);
+ 
+        System.out.print("Num1  :");
+        int num1=sc.nextInt();
+        System.out.print("Num2 :");
+        int num2=sc.nextInt();
+ 
+        System.out.println("Lowest Common Factor: " + lcm(num1,num2));
+       
+    }
 }

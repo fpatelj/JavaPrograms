@@ -1,35 +1,28 @@
 package remoteTiger;
+import java.util.Scanner;
 
 public class PrimeOrNot_08 {
 
-	public static void main(String[] args) 
-	{
-		int b=0, c=0;
-		{
-			int num=6;
-			b = num/2;
-			if(num==0 || num==1)
-			{
-				System.out.println(num + " is not a prime number");
-			}
-			else
-			{
-				for(int a=2; a<=b;a++)
-				{
-					if(num%a==0)
-					{
-						System.out.println(num + " is not prime number");
-						c=1;
-						break;
-					}
-				}
-				if(c==0)
-				{
-					System.out.println(num + " is a prime number");
-				}
-			}
-		}
+	public static void main(String[] args) {
+	       Scanner s = new Scanner(System.in);
+	       System.out.print("Enter a number : ");
+	       int n = s.nextInt();
+	       if (isPrime(n)) {
+	           System.out.println(n + " is a prime number");
+	       } else {
+	           System.out.println(n + " is not a prime number");
+	       }
+	   }
 
+	   public static boolean isPrime(int n) {
+	       if (n <= 1) {
+	           return false;
+	       }
+	       for (int i = 2; i < Math.sqrt(n); i++) {
+	           if (n % i == 0) {
+	               return false;
+	           }
+	       }
+	       return true;
+	   }
 	}
-
-}
