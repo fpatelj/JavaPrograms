@@ -1,68 +1,76 @@
 package videoPractices;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class FileReaderHomeWork {
 
-	public static void main(String[] args) {
-		try {
-			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("test1.txt"));
-		
-		
-			bufferedWriter.write("Hello World");
-			bufferedWriter.newLine();
-			bufferedWriter.write("My name is Feral");
-			bufferedWriter.newLine();
-			bufferedWriter.write("This is a mysterios world");
-			bufferedWriter.newLine();
-			bufferedWriter.write("It is fun though");
-			bufferedWriter.newLine();
-			bufferedWriter.write("Just explore");
-			bufferedWriter.newLine();
-			bufferedWriter.write("Just Roam");
-			bufferedWriter.newLine();
-			bufferedWriter.write("Just look around");
-			bufferedWriter.newLine();
-			bufferedWriter.write("Have fun");
-			bufferedWriter.newLine();
-			bufferedWriter.write("Visit places");
-			bufferedWriter.newLine();
-			bufferedWriter.write("It is fun though");
-			bufferedWriter.newLine();
-			bufferedWriter.write("So, Chill and relax.");
-			bufferedWriter.write("It is fun though");
-			bufferedWriter.newLine();
-			bufferedWriter.write("It is fun though");
-			bufferedWriter.newLine();
-			bufferedWriter.flush();
-			bufferedWriter.close();
-		
-		
-		} catch (IOException e) {
+	public static void main(String[] args)
 
-			e.printStackTrace();
-		}
+			throws FileNotFoundException {
 
-		
-		
-		try {
-			BufferedWriter bufferedWrite = new BufferedWriter(new FileWriter("test2.txt"));
-		
-			bufferedWrite.write("Hello World, it is fun explore visit though chill and relax");
-			bufferedWrite.flush();
-			bufferedWrite.close();
-		
-	
-		
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
+		Scanner console = new Scanner(System.in);
+
+		intro();
+
+		System.out.print("\tEnter the first file name: ");
+
+		String file1 = console.nextLine();
+
+		System.out.print("\tEnter the second file name: ");
+
+		String file2 = console.nextLine();
+
+		System.out.println();
+
+		System.out.println("Differences Found: \n");
+
+		compareFiles(new Scanner(new File(file1)), (new Scanner(new File(file2))));
+
 	}
+
 	
+
+	public static void intro() {
+	 
+	         System.out.println("This program reads from two given input files and");
 	
+	         System.out.println("prints information about the differences between them. \n");
 	
+	     }
+
+	public static void compareFiles (Scanner file1, Scanner file2) {
+	      String lineA ;
+	
+	       String lineB ;
+	 
+	         int x = 1;
+	 
+	         while (file1.hasNextLine() && file2.hasNextLine()) {
+	 
+	             lineA = file1.nextLine();
+	 
+	             lineB = file2.nextLine();
+	 
+	             if (!lineA.equals(lineB)) {
+	 
+	                 System.out.println("Line " + x++);
+	
+	                 System.out.println("< " + lineA);
+	
+	                 System.out.println("> " + lineB + "\n");
+	
+	          }
+	 
+	         }
+	 
+	     }
 
 }

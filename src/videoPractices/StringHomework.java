@@ -1,51 +1,43 @@
 package videoPractices;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StringHomework {
 
-	public static void main(String[] args) {
+	
+		public static void main(String[] args) {
+	        String s = "The fox jumped out of the barn";
+	        String t = "fox jumped out barn";
 
-		String testString1 = "The brown jumps";
-		String testString2 = "The quick brown fox jumps";
+	        String[] arr = missingWords(s, t);
+	        for (String str : arr) {
+	            System.out.println(str);
+	        }
+	    }
 
-	}
+	    static String[] missingWords(String s, String t) {
+	        List<String> words = new ArrayList<>();
 
-	public static String stringDiff(String testString1, String testString2) {
-		int index = testString1.lastIndexOf(testString2);
-		if (index > -1) {
-			return testString1.substring(testString2.length());
-		}
-		return testString1;
-	}
+	        String[] tTokens = t.split(" ");
+	        String[] sTokens = s.split(" ");
 
+	        System.out.println("sTokens = " + Arrays.asList(sTokens));
+	        System.out.println("tTokens = " + Arrays.asList(tTokens));
+
+	        for (int i = 0, j = 0; i < sTokens.length; i++) {
+	            if (!sTokens[i].trim().equals(tTokens[j].trim())) {
+	                words.add(sTokens[i]);
+	            } else {
+	                if (j >= tTokens.length - 1) {
+	                    continue;
+	                } else {
+	                    j++;
+	                }
+	            }
+	        }
+
+	        return words.toArray(new String[0]);
+	    }
 }
-
-/*
- * public static String stringDiff(String testString1, String testString2) {
- * 
- * if (testString1 == null) { return testString2; } if (testString2 == null) {
- * return testString1; }
- * 
- * int x = indexOfDifference(testString1, testString2); if (x == -1) { return
- * ""; }
- * 
- * return testString2.substring(x);
- * 
- * }
- * 
- * public static int indexOfDifference(String testString1, String testString2) {
- * if (testString1 == testString2) { return -1; } if (testString1 == null ||
- * testString2 == null) { return 0; }
- * 
- * int i; for (i = 0; i < testString1.length() && i < testString2.length(); ++i)
- * { if (testString1.charAt(i) != testString2.charAt(i)) { break; } } if (i <
- * testString2.length() || i < testString1.length()) { return i; } return -1; }
- * 
- * }
- */
-
-/*
- * if (testString1.length() > testString2.length()) { return
- * testString1.substring(testString1.length() - 1); } else if
- * (testString2.length() > testString1.length()) { return
- * testString2.substring(testString1.length() - 1); } else { return ""; }
- */
