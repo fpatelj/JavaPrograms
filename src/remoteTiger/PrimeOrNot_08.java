@@ -23,7 +23,7 @@ public class PrimeOrNot_08 {
 		}
 	}
 
-	boolean isPrime(int n) {
+	static boolean isPrime(int n) {
 
 		if (n % 2 == 0){
 			return false;
