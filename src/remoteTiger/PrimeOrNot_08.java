@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class PrimeOrNot_08 {
 
 	public static void main(String[] args) {
+
 		int num, i, count = 0;
 		Scanner s = new Scanner(System.in);
 		System.out.print("Enter a number : ");
@@ -34,3 +35,4 @@ public class PrimeOrNot_08 {
 		return true;
 	}
 }
+
