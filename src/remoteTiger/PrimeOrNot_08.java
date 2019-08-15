@@ -1,6 +1,7 @@
 package remoteTiger;
 
-import java.util.Scanner;
+
+import java.lang.Math;
 
 public class PrimeOrNot_08 {
 
@@ -18,7 +19,8 @@ public class PrimeOrNot_08 {
 			return false;
 		}
 
-		for (int i = 3; i < (n/2); i += 2) {
+		/* for (int i = 3; i < (n/2); i += 2) { */
+		for (int i = 3; i < Math.sqrt(n); i += 2) {
 			count++;
 			if (n % i == 0) {
 				System.out.println("Loop ran:" + count);
