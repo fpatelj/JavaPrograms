@@ -11,7 +11,6 @@ public class PrimeOrNot_08 {
 	}
 
 	static boolean isPrime(int n) {
-<<<<<<< HEAD
 		int count = 0;
 
 		if (n % 2 == 0) {
@@ -23,15 +22,6 @@ public class PrimeOrNot_08 {
 			count++;
 			if (n % i == 0) {
 				System.out.println("Loop ran:" + count);
-=======
-
-		if (n % 2 == 0){
-			return false;
-		}
-
-		for (int i = 3; i <= (n/2); i += 2) {
-			if (n % i == 0){
->>>>>>> 3fa37309e899cc57a7b3b1c934cf35e0b8b04fef
 				return false;
 			}
 		}
