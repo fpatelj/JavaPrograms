@@ -7,7 +7,7 @@ public class PrimeOrNot_08 {
 
 	public static void main(String[] args) {
 
-		int i = 71;
+		int i = 93;
 		System.out.println(isPrime(i));
 	}
 
