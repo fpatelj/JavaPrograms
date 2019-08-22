@@ -12,7 +12,7 @@ public class ApplicationsAsCollectionDemo {
 		 * an object in heap and it referenced to the string pool
 		 * System.out.println(a1.equals(c1));//true, because we used the equals() as it
 		 * breaks the string into array of characters and it checks each character
-		 */
+		 */	
 
 		/*
 		 * Object o1 = new Object(); Object o2 = new Object();
