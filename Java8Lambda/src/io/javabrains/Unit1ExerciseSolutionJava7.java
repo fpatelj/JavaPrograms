@@ -7,9 +7,11 @@ import java.util.List;
 
 public class Unit1ExerciseSolutionJava7 {
 
-	private static final int List = 0;
-	private static final int Person = 0;
-
+	/*
+	 * private static final int List = 0; private static final int Person = 0;
+	 */
+	
+	
 	public static void main(String[] args) {
 		List<Person> people = Arrays.asList(
 
