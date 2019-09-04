@@ -23,7 +23,7 @@ public class StreamsExample1 {
 		 * System.out.println(p.getFirstName()));
 		 */
 		
-		long count = people.parallelStream() //faster
+		long count = people.parallelStream() //faster	
 		.filter(p -> p.getLastName().startsWith("C"))
 		.count();
 		
