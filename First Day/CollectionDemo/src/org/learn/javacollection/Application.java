@@ -31,7 +31,6 @@ public class Application {
 
 		// myList.forEach(System.out::println);
 
-		
 		/*
 		 * Map<Integer, String> myMap = new HashMap<>(7);
 		 * 
@@ -40,10 +39,8 @@ public class Application {
 		 * myMap.put(4, "Mark");
 		 * 
 		 * 
-		 * myMap.entrySet().forEach(x -> System.out.println(x.getKey()+ ":" +
-		 * x.getValue()));
+		 * myMap.entrySet().forEach(x -> System.out.println(x.getKey()+ ":" + x.getValue()));
 		 */
-		 
 		/*
 		 * List<Employee> employees = Arrays.asList(new Employee(15, "John"), new
 		 * Employee(7, "Luke"), new Employee(12, "kevin"), new Employee(14, "Tom"), new
@@ -64,20 +61,15 @@ public class Application {
 		//System.out.println(e4.equals(e5));
 		
 		
-		//HashMap<Integer , Employee> myEmployeeMap = new HashMap<>(10);
+		HashMap<Integer , Employee> myEmployeeMap = new HashMap<>(10);
 		
 		  Map<Employee, Employee> myEmployeeMap = new HashMap<>(10);
-		 
-		  myEmployeeMap.put(e1, e1);
-		  myEmployeeMap.put(e2, e2);
-		  myEmployeeMap.put(e3,e3); 
-		  myEmployeeMap.put(e4, e4);
-		  myEmployeeMap.put(e5, e5);
-		  
+		  myEmployeeMap.put(e1, e1); myEmployeeMap.put(e2, e2); myEmployeeMap.put(e3,
+		  e3); myEmployeeMap.put(e4, e4); myEmployeeMap.put(e5, e5);
 		 
 		
 		
-		//myEmployeeMap.entrySet().forEach(x -> System.out.println(x.getKey()+ ":" + x.getValue()));
+		myEmployeeMap.entrySet().forEach(x -> System.out.println(x.getKey()+ ":" + x.getValue()));
 		
 		/*
 		 * Set<Employee> myEmployeeSet = new TreeSet<>(); myEmployeeSet.add(e1);
@@ -88,6 +80,5 @@ public class Application {
 		 */
 	}
 	
-		
 
 }
