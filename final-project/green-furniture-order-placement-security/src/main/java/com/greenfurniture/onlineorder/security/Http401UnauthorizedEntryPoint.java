@@ -11,17 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Returns a 401 error code (Unauthorized) to the client.
- */
 @Component
 public class Http401UnauthorizedEntryPoint implements AuthenticationEntryPoint {
 
     private static final Logger LOG = LoggerFactory.getLogger(Http401UnauthorizedEntryPoint.class);
 
-    /**
-     * Always returns a 401 error code to the client.
-     */
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException arg2) throws IOException, ServletException {
         LOG.debug("Pre-authenticated entry point called. Rejecting access");

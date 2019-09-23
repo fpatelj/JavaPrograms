@@ -21,11 +21,6 @@
 			<column name="DESCRIPTION" type="varchar(2000)"></column>
 			<column name="REQUIREMENTS" type="varchar(2000)"></column>
 			<column name="LOCATION" type="varchar(50)"></column>
-			<column name="first_name" type="varchar(50)" />
-			<column name="last_name" type="varchar(50)" />
-			<column name="nationality" type="varchar(50)">
-				<constraints nullable="false" />
-			</column>
 		</createTable>
 	</changeSet>
 </databaseChangeLog>

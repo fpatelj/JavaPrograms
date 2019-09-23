@@ -24,7 +24,7 @@ public class JobPosting implements Serializable {
 	private String description;
 
 	@Column(name = "LOCATION")
-	private String Location;
+	private String location;
 
 	@Column(name = "REQUIREMENTS")
 	private String requirements;
@@ -49,11 +49,11 @@ public class JobPosting implements Serializable {
 	}
 
 	public String getLocation() {
-		return Location;
+		return location;
 	}
 
 	public void setLocation(String location) {
-		Location = location;
+		this.location = location;
 	}
 
 	public String getRequirements() {
@@ -74,7 +74,7 @@ public class JobPosting implements Serializable {
 
 	@Override
 	public String toString() {
-		return "JobPosting [id=" + id + ", description=" + description + ", Location=" + Location + ", requirements="
+		return "JobPosting [id=" + id + ", description=" + description + ", Location=" + location + ", requirements="
 				+ requirements + ", title=" + title + "]";
 	}
 

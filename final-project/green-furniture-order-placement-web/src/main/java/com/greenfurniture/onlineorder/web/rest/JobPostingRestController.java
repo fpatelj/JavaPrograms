@@ -37,8 +37,10 @@ public class JobPostingRestController {
 	@GetMapping("/job_postings/{id}")
 	public ResponseEntity<JobPosting> getOneAuthor(@PathVariable Integer id) throws URISyntaxException {
 		LOG.debug("REST request to get a job posting with id: {}", id);
-		return Optional.ofNullable(jobPostingRepository.findOneById(id))
-				.map(jp -> new ResponseEntity<>(jp.get(), HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+		return Optional
+				.ofNullable(jobPostingRepository.findOneById(id))
+				.map(jp -> new ResponseEntity<>(jp.get(), HttpStatus.OK))
+				.orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 
 	@GetMapping("job_postings")
@@ -51,16 +53,17 @@ public class JobPostingRestController {
 	public ResponseEntity<Void> createJobPosting(@RequestBody JobPosting jobPosting) throws URISyntaxException {
 		LOG.debug("REST request to create a job posting: {}", jobPosting.getId());
 		if (jobPosting.getId() != null) {
-			return ResponseEntity.badRequest()
-					.header("Failure", "New job posting should not have any id, use put method for update").build();
+			return ResponseEntity
+					.badRequest()
+					.header("Failure", "New job posting should not have any id, use put method for update")
+					.build();
 		}
 		JobPosting jp = jobPostingRepository.save(jobPosting);
 		return ResponseEntity.created(new URI("/api/rest/job_postings/" + jp.getId())).build();
 	}
 
 	@PutMapping("/job_postings")
-	public ResponseEntity<JobPosting> updateJobPosting(JobPosting jobPosting) throws URISyntaxException {
-		JobPosting jp = jobPostingRepository.save(jobPosting);
+	public ResponseEntity<JobPosting> updateJobPosting(@RequestBody JobPosting jobPosting) throws URISyntaxException {
 		LOG.debug("REST request to update a job posting with id: {}", jobPosting.getId());
 		if (jobPosting.getId() != null)
 
@@ -68,8 +71,10 @@ public class JobPostingRestController {
 			return new ResponseEntity<>(jobPostingRepository.save(jobPosting), HttpStatus.OK);
 
 		} else {
-			return ResponseEntity.badRequest()
-					.header("Failure", "New job posting should not have any id, use post method to create").build();
+			return ResponseEntity
+					.badRequest()
+					.header("Failure", "New job posting should not have any id, use post method to create")
+					.build();
 		}
 
 	}
