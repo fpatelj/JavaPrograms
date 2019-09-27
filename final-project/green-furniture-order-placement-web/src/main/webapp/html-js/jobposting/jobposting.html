@@ -20,7 +20,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="postings in vm.jobPostings track by posting.id">
+            <tr ng-repeat="posting in vm.jobPostings track by posting.id">
                 <td><a ui-sref="jobposting-detail({id:posting.id})">{{posting.id}}</a></td>
                 <td>{{posting.title}}</td>
                 <td>{{posting.location}}</td>

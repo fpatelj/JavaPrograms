@@ -43,7 +43,7 @@ public class JobPostingRestController {
 				.orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 
-	@GetMapping("job_postings")
+	@GetMapping("/job_postings")
 	public ResponseEntity<List<JobPosting>> getAllJobPostings() {
 		LOG.debug("REST request to get all job posting with id:");
 		return new ResponseEntity<>(jobPostingRepository.findAll(), HttpStatus.OK);
