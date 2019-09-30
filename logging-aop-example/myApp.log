@@ -1,0 +1,3 @@
+2019-09-30 17:31:24,317 INFO [main] s.d.OurAspect [OurAspect.java:29] Reached to the join point
+2019-09-30 17:31:24,332 INFO [main] s.d.a.StringModifier [StringModifier.java:14] Given string is being replaced
+2019-09-30 17:31:24,332 DEBUG [main] s.d.Application [Application.java:21] debug message from main:What a powerful tool AOP is
