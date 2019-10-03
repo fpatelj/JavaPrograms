@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "EMPLOYEE")
 public class Employee implements Serializable {
@@ -20,7 +21,7 @@ public class Employee implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "name")
+	@Column(name = "name") //not that it matters much to us as a programmer (as sql is case insensitive) but be consistent, last field you used all uppercase, so be consistent
 	private String name;
 	
 	public Employee() {}
